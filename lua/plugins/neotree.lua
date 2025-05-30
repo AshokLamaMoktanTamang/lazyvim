@@ -11,6 +11,8 @@ return {
           hide_by_name = { "" },
           hide_by_pattern = { "" },
         },
+        follow_current_file = true, -- Highlight and focus the currently opened file
+        use_libuv_file_watcher = true, -- Automatically refresh tree on changes
       },
       window = {
         position = "left",

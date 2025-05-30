@@ -3,10 +3,16 @@
 -- Add any additional keymaps here
 
 -- only for mac
-vim.api.nvim_set_keymap("n", "<C-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", ":m .-2<CR>==", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-k>", "<Esc>:m .-2<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-k>", "<Esc>:m .-2<CR>==", { noremap = true, silent = true })
 
 -- Map 'jk' to Escape in insert mode
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
+
+vim.keymap.set("i", "<Tab>", function()
+  if LazyVim.cmp.actions.ai_accept() then return end
+  return "<Tab>"
+end, { expr = true, silent = true })
+
