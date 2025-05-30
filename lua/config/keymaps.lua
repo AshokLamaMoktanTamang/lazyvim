@@ -10,9 +10,3 @@
 
 -- Map 'jk' to Escape in insert mode
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
-
-vim.keymap.set("i", "<Tab>", function()
-  if LazyVim.cmp.actions.ai_accept() then return end
-  return "<Tab>"
-end, { expr = true, silent = true })
-
